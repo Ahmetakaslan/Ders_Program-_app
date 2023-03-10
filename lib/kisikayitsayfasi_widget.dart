@@ -32,83 +32,87 @@ class _Kisi_KaydetState extends State<Kisi_Kaydet> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF5B2C6F),
         title: Text("Kişiler Kaydet"),
       ),
       body: Center(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: <Widget>[
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2),
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextField(
-                  style: TextStyle(fontSize: 25),
-                  decoration: InputDecoration(
-                      hintText: "Isim Giriniz",
-                      hintStyle: TextStyle(fontSize: 25)),
-                  controller: a,
+        child: SingleChildScrollView(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: <Widget>[
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextField(
+                    style: TextStyle(fontSize: 25),
+                    decoration: InputDecoration(
+                        hintText: "Isim Giriniz",
+                        hintStyle: TextStyle(fontSize: 25)),
+                    controller: a,
+                  ),
                 ),
               ),
-            ),
-            Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2),
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextField(
-                  keyboardType: TextInputType.number,
-                  style: TextStyle(fontSize: 25),
-                  controller: b,
-                  decoration: InputDecoration(
-                      hintText: "Akts Giriniz",
-                      hintStyle: TextStyle(fontSize: 25)),
+              Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextField(
+                    keyboardType: TextInputType.number,
+                    style: TextStyle(fontSize: 25),
+                    controller: b,
+                    decoration: InputDecoration(
+                        hintText: "Akts Giriniz",
+                        hintStyle: TextStyle(fontSize: 25)),
+                  ),
                 ),
               ),
-            ),
-             Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2),
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextField(
+               Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextField(
 
-                  style: TextStyle(fontSize: 25),
-                  controller: c,
-                  decoration: InputDecoration(
-                      hintText: "Hoca ismi  Giriniz",
-                      hintStyle: TextStyle(fontSize: 25)),
+                    style: TextStyle(fontSize: 25),
+                    controller: c,
+                    decoration: InputDecoration(
+                        hintText: "Hoca ismi  Giriniz",
+                        hintStyle: TextStyle(fontSize: 25)),
+                  ),
                 ),
               ),
-            ),
-                  Padding(
-              padding: const EdgeInsets.all(18.0),
-              child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
-                decoration: BoxDecoration(
-                    border: Border.all(width: 2),
-                    borderRadius: BorderRadius.circular(20)),
-                child: TextField(
+                    Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Container(
+                  padding: EdgeInsets.symmetric(horizontal: 20, vertical: 5),
+                  decoration: BoxDecoration(
+                      border: Border.all(width: 2),
+                      borderRadius: BorderRadius.circular(20)),
+                  child: TextField(
 
-                  style: TextStyle(fontSize: 25),
-                  controller: d,
-                  decoration: InputDecoration(
-                      hintText: "Ders Tarihi  Giriniz",
-                      hintStyle: TextStyle(fontSize: 25)),
+                    style: TextStyle(fontSize: 25),
+                    controller: d,
+                    decoration: InputDecoration(
+                        hintText: "Ders Tarihi  Giriniz",
+                        hintStyle: TextStyle(fontSize: 25)),
+                  ),
                 ),
               ),
-            ),
-          ],
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+        backgroundColor: Color(0xFF7B7D7D),
         onPressed: () {
         if(a.text=="" || b.text =="" ||c.text==""){
   ScaffoldMessenger.of(context).showSnackBar(

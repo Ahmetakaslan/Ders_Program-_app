@@ -72,7 +72,8 @@ class _KisiDetayState extends State<KisiDetay> {
     Size size=MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        title: Text("Derslerin ayrıntısı "),
+        backgroundColor: Color(0xFF9A7D0A),
+            title: Text("Derslerin ayrıntısı "),
       ),
       body: Center(
         child: Column(

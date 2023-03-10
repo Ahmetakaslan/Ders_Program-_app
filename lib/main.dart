@@ -138,13 +138,15 @@ class _AnaEkranState extends State<AnaEkran> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        backgroundColor: Color(0xFF5D6D7E),
         /// kendi leadingine icon buton verererk basıldığında uygulamadan çıkış sağlanır
         leading: IconButton(
           icon: Icon(Icons.arrow_back),
           onPressed: () => uygulamayiKapat(),
         ),
         title: aramaYapiliyormu
-            ? TextField(
+            ? TextFormField(
+          style: TextStyle(color: Colors.white),
                 onChanged: (value) {
                   print(value);
                   setState(() {
@@ -265,6 +267,7 @@ class _AnaEkranState extends State<AnaEkran> {
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
+          backgroundColor: Color(0xFF7B7D7D),
           onPressed: () {
             Navigator.push(
                 context,
