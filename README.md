@@ -2,7 +2,7 @@
 
 A new Flutter project.
 
-Üniversitedeki ders programlarının karışıklığı Önlemek adına kendim için yaptığım bir app
+Üniversitedeki ders programlarının, karmaşıklığını önlemek adına kendim için yaptığım bir app.
 
 
 <img src="https://user-images.githubusercontent.com/95686166/224391140-63dfde1a-7ec8-48f7-857c-1e40040cfb10.png" width="350" height="700">
