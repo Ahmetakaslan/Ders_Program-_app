@@ -3,6 +3,7 @@
 Flutter & dart
 
 Üniversitedeki ders programlarının, karmaşıklığını önlemek adına kendim için yaptığım bir app.
+Gün ismini girerek veya hoca ismini girerek  ayrıntılarına kolayca ulaşabilirsin
 
 
 
