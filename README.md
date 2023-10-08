@@ -7,6 +7,8 @@ Gün ismini girerek veya hoca ismini girerek  ayrıntılarına kolayca ulaşabil
 # If you want to downlaod 
 <a href="https://github.com/Ahmetakaslan/Ders_Program-_app/raw/master/app-release.apk" download="Ders programı.apk"><img src="down.png" alt="Download the app" style="width:100px;height:70px;"></a>
 
+https://github.com/Ahmetakaslan/Ders_Program-_app/blob/master/app-release.apk
+
 
 <img src="https://user-images.githubusercontent.com/95686166/224391140-63dfde1a-7ec8-48f7-857c-1e40040cfb10.png" width="350" height="700">
 <img src="https://user-images.githubusercontent.com/95686166/224391146-a621a3f6-e739-4b94-9d19-14845440d4bc.png" width="350" height="700">
