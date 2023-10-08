@@ -237,6 +237,14 @@ class _AnaEkranState extends State<AnaEkran> {
                                     style: TextStyle(fontSize: 20),
                                   ),
                                 ),
+                                  Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: Text(
+                                    "${sirlisekilekle.derslik}",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
                                 Padding(
                                   padding: const EdgeInsets.symmetric(
                                       horizontal: 40),
