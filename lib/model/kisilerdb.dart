@@ -6,7 +6,6 @@ class Kisilerdb{
     String ders_akts;
     String ders_hoca;
     String ders_tarih;
-    Kisilerdb(this.ders_id,this.ders_ad,this.ders_akts,this.ders_hoca,this.ders_tarih);
-
-
+    String derslik;
+    Kisilerdb(this.ders_id,this.ders_ad,this.ders_akts,this.ders_hoca,this.ders_tarih,this.derslik);
 }

@@ -21,4 +21,5 @@ class VeriTabaniYardimcisi{
     }
     return openDatabase(pathOfDatabase);
   }
+   
 }

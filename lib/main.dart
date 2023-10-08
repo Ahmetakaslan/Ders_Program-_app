@@ -1,10 +1,10 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:kisiler/kisidetay_widget.dart';
-import 'package:kisiler/kisikayitsayfasi_widget.dart';
-import 'package:kisiler/kisilerdao.dart';
-import 'package:kisiler/kisilerdb.dart';
+import 'package:kisiler/view/kisidetay_widget.dart';
+import 'package:kisiler/view/kisikayitsayfasi_widget.dart';
+import 'package:kisiler/viewmodel/kisilerdao.dart';
+import 'package:kisiler/model/kisilerdb.dart';
 
 void main() {
   runApp(MyApp());
@@ -44,7 +44,7 @@ class _AnaEkranState extends State<AnaEkran> {
     late List<Kisilerdb> a;
     try {
       a = await Kisilerdao().tumKisiler();
-      print(a[0].ders_ad);
+    
     } catch (e) {
       print(e);
     }
@@ -147,6 +147,7 @@ class _AnaEkranState extends State<AnaEkran> {
         title: aramaYapiliyormu
             ? TextFormField(
           style: TextStyle(color: Colors.white),
+          autofocus: true,
                 onChanged: (value) {
                   print(value);
                   setState(() {
@@ -179,93 +180,7 @@ class _AnaEkranState extends State<AnaEkran> {
           )
         ],
       ),
-      body: WillPopScope(
-        onWillPop: () => uygulamayiKapat(),
-        child: FutureBuilder(
-          future: aramaYapiliyormu ? kisiAra(arama_kelimesi) : tumKisiler(),
-          builder: (context, snapshot) {
-            if (snapshot.hasData) {
-              var kisiler = snapshot.data;
-
-              return ListView.builder(
-                itemCount: kisiler!.length,
-                itemBuilder: (context, index) {
-                  var sirlisekilekle = kisiler[index];
-                  return SingleChildScrollView(
-                    child: Padding(
-                      padding: const EdgeInsets.all(8.0),
-                      child: SizedBox(
-                        height: 55,
-                        child: GestureDetector(
-                          onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => KisiDetay(sirlisekilekle),
-                              )),
-                          child: Card(
-                            shape: BeveledRectangleBorder(
-                                borderRadius: BorderRadius.circular(10),
-                                side: BorderSide(width: 2)),
-                            child: SingleChildScrollView(
-                              scrollDirection: Axis.horizontal,
-                              child: Row(
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 40),
-                                    child: Text(
-                                      "${sirlisekilekle.ders_ad}",
-                                      style: TextStyle(fontSize: 20),
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 40),
-                                    child: Text("${sirlisekilekle.ders_akts}",
-                                        style: TextStyle(fontSize: 20)),
-                                  ),
-                                    Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 40),
-                                    child: Text("${sirlisekilekle.ders_hoca}",
-                                        style: TextStyle(fontSize: 20)),
-                                  ),
-                                    Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 40),
-                                    child: Text("${sirlisekilekle.ders_tarih}",
-                                        style: TextStyle(fontSize: 20)),
-                                  ),
-                                   Padding(
-                                    padding: const EdgeInsets.symmetric(
-                                        horizontal: 40),
-                                    child: IconButton(
-                                        onPressed: () {
-                                          Eminmisin(sirlisekilekle.ders_id);
-                                        },
-                                        icon: Icon(Icons.delete)),
-                                  ),
-                                 
-                                ],
-                              ),
-                            ),
-                          ),
-                        ),
-                      ),
-                    ),
-                  );
-                },
-              );
-            } else {
-              return Center(
-                child: Text("Veri Yok"),
-              );
-            }
-          },
-        ),
-      ),
+      body: Body(),
       floatingActionButton: FloatingActionButton.extended(
           backgroundColor: Color(0xFF7B7D7D),
           onPressed: () {
@@ -277,6 +192,96 @@ class _AnaEkranState extends State<AnaEkran> {
           },
           label: Text("Ekle"),
           icon: Icon(Icons.add)),
+    );
+  }
+
+  WillPopScope Body() {
+    return WillPopScope(
+      onWillPop: () => uygulamayiKapat(),
+      child: FutureBuilder(
+        future: aramaYapiliyormu ? kisiAra(arama_kelimesi) : tumKisiler(),
+        builder: (context, snapshot) {
+          if (snapshot.hasData) {
+            var kisiler = snapshot.data;
+
+            return ListView.builder(
+              itemCount: kisiler!.length,
+              itemBuilder: (context, index) {
+                var sirlisekilekle = kisiler[index];
+                return SingleChildScrollView(
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: SizedBox(
+                      height: 55,
+                      child: GestureDetector(
+                        onTap: () => Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => KisiDetay(sirlisekilekle),
+                            )),
+                        child: Card(
+                          shape: BeveledRectangleBorder(
+                              borderRadius: BorderRadius.circular(10),
+                              side: BorderSide(width: 2)),
+                          child: SingleChildScrollView(
+                            scrollDirection: Axis.horizontal,
+                            child: Row(
+                              mainAxisAlignment:
+                                  MainAxisAlignment.spaceEvenly,
+                              children: [
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: Text(
+                                    "${sirlisekilekle.ders_ad}",
+                                    style: TextStyle(fontSize: 20),
+                                  ),
+                                ),
+                                Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: Text("${sirlisekilekle.ders_akts}",
+                                      style: TextStyle(fontSize: 20)),
+                                ),
+                                  Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: Text("${sirlisekilekle.ders_hoca}",
+                                      style: TextStyle(fontSize: 20)),
+                                ),
+                                  Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: Text("${sirlisekilekle.ders_tarih}",
+                                      style: TextStyle(fontSize: 20)),
+                                ),
+                                 Padding(
+                                  padding: const EdgeInsets.symmetric(
+                                      horizontal: 40),
+                                  child: IconButton(
+                                      onPressed: () {
+                                        Eminmisin(sirlisekilekle.ders_id);
+                                      },
+                                      icon: Icon(Icons.delete)),
+                                ),
+                               
+                              ],
+                            ),
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                );
+              },
+            );
+          } else {
+            return Center(
+              child: Text("Veri Yok"),
+            );
+          }
+        },
+      ),
     );
   }
 }
