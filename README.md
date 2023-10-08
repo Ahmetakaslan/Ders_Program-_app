@@ -4,10 +4,10 @@ Flutter & dart
 
 Üniversitedeki ders programlarının, karmaşıklığını önlemek adına kendim için yaptığım bir app.
 Gün ismini girerek veya hoca ismini girerek  ayrıntılarına kolayca ulaşabilirsin
-## If you want to downlaod 
-# if it is not working click this link then click view raw.
+# If you want to downlaod 
+ 
 <a href="https://github.com/Ahmetakaslan/Ders_Program-_app/raw/master/app-release.apk" download="Ders programı.apk"><img src="down.png" alt="Download the app" style="width:100px;height:70px;"></a>
-
+# if it is not working click this link then click view raw.
 https://github.com/Ahmetakaslan/Ders_Program-_app/blob/master/app-release.apk
 
 
